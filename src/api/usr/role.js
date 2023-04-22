@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/usr/roles/page',
+    url: '/usr/api/roles/page',
     method: 'get',
     params
   })
@@ -10,7 +10,7 @@ export function getList(params) {
 
 export function save(data) {
   let methodName = 'post'
-  let url = '/usr/roles'
+  let url = '/usr/api/roles'
   if (data.id > 0) {
     methodName = 'put'
     url = url + '/' + data.id
@@ -24,21 +24,21 @@ export function save(data) {
 
 export function remove(roleId) {
   return request({
-    url: `/usr/roles/${roleId}`,
+    url: `/usr/api/roles/${roleId}`,
     method: 'delete'
   })
 }
 
 export function roleTreeListByUserId(userId) {
   return request({
-    url: `/usr/roles/${userId}/rolestree`,
+    url: `/usr/api/roles/${userId}/rolestree`,
     method: 'get'
   })
 }
 
 export function changePermissons(roleId, permissons) {
   return request({
-    url: `/usr/roles/${roleId}/permissons`,
+    url: `/usr/api/roles/${roleId}/permissons`,
     method: 'put',
     data: permissons
   })

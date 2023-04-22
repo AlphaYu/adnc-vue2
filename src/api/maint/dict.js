@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/maint/dicts',
+    url: '/maint/api/dicts',
     method: 'get',
     params
   })
@@ -10,7 +10,7 @@ export function getList(params) {
 
 export function save(params) {
   let methodName = 'post'
-  let url = '/maint/dicts'
+  let url = '/maint/api/dicts'
   if (params.id > 0) {
     methodName = 'put'
     url = url + '/' + params.id
@@ -24,7 +24,7 @@ export function save(params) {
 
 export function remove(id) {
   return request({
-    url: `/maint/dicts/${id}`,
+    url: `/maint/api/dicts/${id}`,
     method: 'delete'
   })
 }

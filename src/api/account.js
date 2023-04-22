@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/auth/session',
+    url: '/auth/api/session',
     method: 'post',
     data
   })
@@ -10,14 +10,14 @@ export function login(data) {
 
 export function logout(token) {
   return request({
-    url: '/auth/session',
+    url: '/auth/api/session',
     method: 'delete'
   })
 }
 
 export function updatePwd(params) {
   return request({
-    url: '/auth/session/password',
+    url: '/auth/api/session/password',
     method: 'put',
     data: params
   })
@@ -25,7 +25,7 @@ export function updatePwd(params) {
 
 export function RenewToken(data) {
   return request({
-    url: '/auth/session',
+    url: '/auth/api/session',
     method: 'put',
     data
   })
@@ -33,14 +33,14 @@ export function RenewToken(data) {
 
 export function getAuthInfo() {
   return request({
-    url: '/auth/session',
+    url: '/auth/api/session',
     method: 'get'
   })
 }
 
 export function getInfo() {
   return request({
-    url: '/usr/users/current',
+    url: '/usr/api/users/current',
     method: 'get'
   })
 }

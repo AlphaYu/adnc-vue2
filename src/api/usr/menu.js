@@ -2,14 +2,14 @@ import request from '@/utils/request'
 
 export function getList() {
   return request({
-    url: '/usr/menus',
+    url: '/usr/api/menus',
     method: 'get'
   })
 }
 
 export function listForRouter(params) {
   return request({
-    url: '/usr/menus/routers',
+    url: '/usr/api/menus/routers',
     method: 'get',
     params
   })
@@ -17,7 +17,7 @@ export function listForRouter(params) {
 
 export function save(data) {
   let methodName = 'post'
-  let url = '/usr/menus'
+  let url = '/usr/api/menus'
   if (data.id > 0) {
     methodName = 'put'
     url = url + '/' + data.id
@@ -31,13 +31,13 @@ export function save(data) {
 
 export function delMenu(id) {
   return request({
-    url: `/usr/menus/${id}`,
+    url: `/usr/api/menus/${id}`,
     method: 'delete'
   })
 }
 export function menuTreeListByRoleId(roleId) {
   return request({
-    url: `/usr/menus/${roleId}/menuTree`,
+    url: `/usr/api/menus/${roleId}/menuTree`,
     method: 'get'
   })
 }

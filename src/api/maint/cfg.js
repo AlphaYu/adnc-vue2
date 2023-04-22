@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/maint/cfgs/page',
+    url: '/maint/api/cfgs/page',
     method: 'get',
     params
   })
@@ -10,7 +10,7 @@ export function getList(params) {
 
 export function exportXls(params) {
   return request({
-    url: '/maint/cfgs/execl',
+    url: '/maint/api/cfgs/execl',
     method: 'get',
     params
   })
@@ -18,7 +18,7 @@ export function exportXls(params) {
 
 export function save(params) {
   let methodName = 'post'
-  let url = '/maint/cfgs'
+  let url = '/maint/api/cfgs'
   if (params.id > 0) {
     methodName = 'put'
     url = url + '/' + params.id
@@ -32,7 +32,7 @@ export function save(params) {
 
 export function remove(id) {
   return request({
-    url: `/maint/cfgs/${id}`,
+    url: `/maint/api/cfgs/${id}`,
     method: 'delete'
   })
 }

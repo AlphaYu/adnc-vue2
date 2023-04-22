@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function getList(params) {
   return request({
-    url: '/usr/users/page',
+    url: '/usr/api/users/page',
     method: 'get',
     params
   })
@@ -10,7 +10,7 @@ export function getList(params) {
 
 export function saveUser(params) {
   let methodName = 'post'
-  let url = '/usr/users'
+  let url = '/usr/api/users'
   if (params.id > 0) {
     methodName = 'put'
     url = url + '/' + params.id
@@ -24,14 +24,14 @@ export function saveUser(params) {
 
 export function remove(userId) {
   return request({
-    url: `/usr/users/${userId}`,
+    url: `/usr/api/users/${userId}`,
     method: 'delete'
   })
 }
 
 export function setRole(userId, roleIds) {
   return request({
-    url: `/usr/users/${userId}/roles`,
+    url: `/usr/api/users/${userId}/roles`,
     method: 'put',
     data: roleIds
   })
@@ -39,7 +39,7 @@ export function setRole(userId, roleIds) {
 
 export function changeStatus(userId, status) {
   return request({
-    url: `/usr/users/${userId}/status`,
+    url: `/usr/api/users/${userId}/status`,
     method: 'put',
     data: { 'value': status }
   })
@@ -47,7 +47,7 @@ export function changeStatus(userId, status) {
 
 export function changeStatusBatch(params) {
   return request({
-    url: '/usr/users/batch/status',
+    url: '/usr/api/users/batch/status',
     method: 'put',
     data: params
   })

@@ -11,14 +11,14 @@ export function tree() {
 
 export function list() {
   return request({
-    url: '/usr/organizations',
+    url: '/usr/api/organizations',
     method: 'get'
   })
 }
 
 export function save(data) {
   let methodName = 'post'
-  let url = '/usr/organizations'
+  let url = '/usr/api/organizations'
   if (data.id > 0) {
     methodName = 'put'
     url = url + '/' + data.id
@@ -32,7 +32,7 @@ export function save(data) {
 
 export function del(id) {
   return request({
-    url: `/usr/organizations/${id}`,
+    url: `/usr/api/organizations/${id}`,
     method: 'delete'
   })
 }
