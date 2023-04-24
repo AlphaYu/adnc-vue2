@@ -17,11 +17,9 @@ jobs:
     - name: Use Node.js 
       uses: actions/setup-node@v3
       with:
-        node-version: 16.x
-        
-    - run: |
-        npm i -g @vue/cli
-        rm -rf node_modules package-lock.json && npm install    
-    - run: |
-        npm run build:prod
+        node-version: 16
+    - name: Installing project dependencies     
+    - run: npm install
+    - name: Building the project
+    - run: npm run build
         
