@@ -20,8 +20,8 @@ jobs:
         node-version: 16.x
         
     - run: |
-        npm install
-        npm install -g @vue/cli@latest
+        npm i -g @vue/cli
+        rm -rf node_modules package-lock.json && npm install    
     - run: |
         npm run build:prod
         
