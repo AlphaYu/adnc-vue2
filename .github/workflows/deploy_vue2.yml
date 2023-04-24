@@ -19,6 +19,9 @@ jobs:
       with:
         node-version: 16.x
         
-    - run: npm install
+    - run: |
+        npm install
+        npm install -g @vue/cli@latest
     - run: |
         npm run build:prod
+        
